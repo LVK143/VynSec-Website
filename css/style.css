@@ -899,3 +899,167 @@ footer {
   width: 100%;
   padding: 12px 16px;
   border: 1px solid #
+
+/* ====== CAREERS PAGE ====== */
+.careers-intro {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.benefit {
+  text-align: center;
+  padding: 2rem;
+}
+
+.benefit i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.open-positions {
+  padding: 80px 0;
+  background: white;
+}
+
+.job-listing {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--primary);
+}
+
+.job-tags {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.tag {
+  background: var(--primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+.application-process {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step {
+  text-align: center;
+  padding: 2rem;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+/* ====== BLOG PAGE ====== */
+.blog-categories {
+  padding: 2rem 0;
+  background: #f8fafc;
+}
+
+.category-filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.blog-posts {
+  padding: 60px 0;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.post-card.featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.post-image {
+  height: 200px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-card.featured .post-image {
+  height: auto;
+}
+
+.image-placeholder i {
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.post-content {
+  padding: 2rem;
+}
+
+.post-category {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.post
