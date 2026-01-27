@@ -23,6 +23,7 @@
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="contact.html" class="active btn-nav">Contact Us</a>
+        <a href="security.html">Security</a>
       </nav>
     </div>
   </div>
@@ -38,56 +39,47 @@
 <section class="contact-section">
   <div class="container">
     <div class="contact-grid">
+
+      <!-- Contact Info -->
       <div class="contact-info">
         <h2>Get in Touch</h2>
         <p>Ready to enhance your cybersecurity posture? Reach out for a free initial consultation.</p>
         
         <div class="contact-methods">
+          <!-- General & Support -->
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div class="contact-details">
               <h3>Email</h3>
-              <p>contact@vynsecit.com</p>
+              <p>General inquiries: <a href="mailto:contact@vynsecit.com">contact@vynsecit.com</a></p>
+              <p>Support: <a href="mailto:support@vynsecit.com">support@vynsecit.com</a></p>
+              <p>Emergency/Incident: <a href="mailto:emergency@vynsecit.com">emergency@vynsecit.com</a></p>
               <p>Response within 24 hours</p>
             </div>
           </div>
-          
+
+          <!-- Phone -->
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
-            </div>
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
             <div class="contact-details">
               <h3>Phone</h3>
               <p>+1 (555) 123-4567</p>
               <p>Mon-Fri, 9AM-6PM EST</p>
             </div>
           </div>
-          
+
+          <!-- Location -->
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div class="contact-details">
               <h3>Location</h3>
               <p>Remote-first company</p>
               <p>Serving clients globally</p>
             </div>
           </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-clock"></i>
-            </div>
-            <div class="contact-details">
-              <h3>Emergency Support</h3>
-              <p>24/7 Incident Response</p>
-              <p>emergency@vynsecit.com</p>
-            </div>
-          </div>
         </div>
-        
+
+        <!-- Social Links -->
         <div class="social-contact">
           <h3>Connect With Us</h3>
           <div class="social-links">
@@ -97,7 +89,8 @@
           </div>
         </div>
       </div>
-      
+
+      <!-- Contact Form -->
       <div class="contact-form-container">
         <h2>Send us a Message</h2>
         <form class="contact-form" netlify>
@@ -107,17 +100,17 @@
             <label for="name">Full Name *</label>
             <input type="text" id="name" name="name" required placeholder="John Smith">
           </div>
-          
+
           <div class="form-group">
             <label for="email">Email Address *</label>
             <input type="email" id="email" name="email" required placeholder="john@company.com">
           </div>
-          
+
           <div class="form-group">
             <label for="company">Company Name</label>
             <input type="text" id="company" name="company" placeholder="Your Company">
           </div>
-          
+
           <div class="form-group">
             <label for="service">Service Interested In</label>
             <select id="service" name="service">
@@ -130,29 +123,31 @@
               <option value="other">Other/General Inquiry</option>
             </select>
           </div>
-          
+
           <div class="form-group">
             <label for="message">Your Message *</label>
             <textarea id="message" name="message" rows="5" required placeholder="Tell us about your security needs..."></textarea>
           </div>
-          
+
           <div class="form-group">
             <div class="checkbox-group">
               <input type="checkbox" id="newsletter" name="newsletter">
               <label for="newsletter">Subscribe to cybersecurity insights newsletter</label>
             </div>
           </div>
-          
+
           <button type="submit" class="btn-primary">
             <span>Send Message</span>
             <i class="fas fa-paper-plane"></i>
           </button>
         </form>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- FAQ Section -->
 <section class="faq-section">
   <div class="container">
     <h2>Frequently Asked Questions</h2>
@@ -161,17 +156,14 @@
         <h3>What's included in a free security assessment?</h3>
         <p>Our free assessment includes a high-level review of your current security posture, identification of critical risks, and recommendations for improvement. No commitment required.</p>
       </div>
-      
       <div class="faq-item">
         <h3>How quickly can you respond to a security incident?</h3>
         <p>Our emergency response team can begin investigation within 30 minutes of notification. Response times vary based on service level agreements.</p>
       </div>
-      
       <div class="faq-item">
         <h3>Do you work with small businesses?</h3>
         <p>Absolutely! We offer scalable solutions for businesses of all sizes, from startups to enterprises.</p>
       </div>
-      
       <div class="faq-item">
         <h3>What industries do you specialize in?</h3>
         <p>We have extensive experience in fintech, healthcare, e-commerce, SaaS, and manufacturing sectors.</p>
@@ -180,6 +172,7 @@
   </div>
 </section>
 
+<!-- CTA Banner -->
 <section class="cta-banner">
   <div class="container">
     <h2>Schedule a Consultation</h2>
@@ -188,8 +181,14 @@
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
-  <!-- Copy footer from index.html -->
+  <div class="container">
+    <p>Contact: <a href="mailto:contact@vynsecit.com">contact@vynsecit.com</a></p>
+    <p>Support: <a href="mailto:support@vynsecit.com">support@vynsecit.com</a></p>
+    <p>Security Reports: <a href="mailto:security@vynsecit.com">security@vynsecit.com</a></p>
+    <p>Emergency: <a href="mailto:emergency@vynsecit.com">emergency@vynsecit.com</a></p>
+  </div>
 </footer>
 
 <script src="js/script.js"></script>
