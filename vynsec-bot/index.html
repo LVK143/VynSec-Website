@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VynSec Cyber Assistant</title>
+  <link rel="stylesheet" href="vynsec-bot.css" />
+</head>
+<body>
+
+<!-- Floating Chat Button -->
+<div id="vynsec-chat-toggle" title="Chat with VynSec">🛡️</div>
+
+<!-- Chat Window -->
+<div id="vynsec-chat-widget" class="hidden">
+  <div class="chat-header">
+    <h3>VynSec Cyber Assistant</h3>
+    <span id="close-chat" title="Close">✖</span>
+  </div>
+
+  <div id="chatBox" class="chat-box">
+    <div class="message bot">
+      👋 Hi! I'm your AI Cybersecurity Assistant.<br>
+      I can help assess your security risk in under a minute.
+    </div>
+  </div>
+
+  <!-- Dynamic Quick Reply Buttons -->
+  <div id="quickReplies" class="quick-replies"></div>
+
+  <!-- User Input -->
+  <div class="chat-input">
+    <input 
+      type="text" 
+      id="userInput" 
+      placeholder="Type your answer..." 
+      autocomplete="off"
+    />
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+<script src="vynsec-bot.js"></script>
+
+<!-- Enable ENTER key to send -->
+<script>
+  document.getElementById("userInput").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      document.getElementById("sendBtn").click();
+    }
+  });
+
+  document.getElementById("sendBtn").addEventListener("click", sendMessage);
+</script>
+
+</body>
+</html>
