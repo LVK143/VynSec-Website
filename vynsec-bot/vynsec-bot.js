@@ -1,4 +1,4 @@
-// SIMPLE VynSec Bot - Working Version
+// FIXED VynSec Bot - Better Conversation Flow
 document.addEventListener('DOMContentLoaded', function() {
     console.log('VynSec Bot loading...');
     
@@ -15,23 +15,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Bot state
     let session = {
         step: 0,
-        riskScore: 0
+        riskScore: 0,
+        isProcessing: false
     };
+    
+    // Conversation steps
+    const conversationFlow = [
+        {
+            type: 'greeting',
+            message: "👋 Hello! I'm your AI Cybersecurity Assistant from <strong>VynSec</strong>.",
+            delay: 1000,
+            replies: []
+        },
+        {
+            type: 'intro',
+            message: "I can assess your security posture in under 60 seconds and provide personalized recommendations.",
+            delay: 800,
+            replies: []
+        },
+        {
+            type: 'question',
+            message: "Would you like to begin a security assessment?",
+            delay: 800,
+            replies: ['Yes, start assessment', 'Learn about VynSec', 'Maybe later']
+        }
+    ];
     
     // Auto-open after 3 seconds
     setTimeout(() => {
         openChat();
-        // Show first message
-        setTimeout(() => {
-            botMessage("👋 Hello! I'm your AI Cybersecurity Assistant from <strong>VynSec</strong>.");
-            setTimeout(() => {
-                botMessage("I can assess your security posture in under 60 seconds and provide personalized recommendations.");
-                setTimeout(() => {
-                    botMessage("Would you like to begin a security assessment?");
-                    showQuickReplies(['Yes, start assessment', 'Learn about VynSec', 'Maybe later']);
-                }, 800);
-            }, 800);
-        }, 500);
+        // Start conversation with delays
+        startConversation();
     }, 3000);
     
     // Event Listeners
@@ -48,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Quick reply handlers
     quickReplies.addEventListener('click', function(e) {
-        if (e.target.classList.contains('quick-reply-btn')) {
+        if (e.target.classList.contains('quick-reply-btn') && !session.isProcessing) {
             const reply = e.target.textContent;
             handleUserReply(reply);
         }
@@ -68,24 +82,68 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Minimize feature coming soon!');
     }
     
-    function botMessage(text) {
+    function startConversation() {
+        session.isProcessing = true;
+        quickReplies.innerHTML = '';
+        
+        let delay = 500;
+        
+        conversationFlow.forEach((step, index) => {
+            setTimeout(() => {
+                if (step.type === 'greeting' || step.type === 'intro') {
+                    botMessage(step.message, false);
+                    
+                    // If this is the last message, show quick replies
+                    if (index === conversationFlow.length - 1) {
+                        setTimeout(() => {
+                            session.isProcessing = false;
+                            if (step.replies.length > 0) {
+                                showQuickReplies(step.replies);
+                            }
+                        }, 800);
+                    }
+                } else if (step.type === 'question') {
+                    botMessage(step.message, true);
+                    setTimeout(() => {
+                        session.isProcessing = false;
+                        showQuickReplies(step.replies);
+                    }, 800);
+                }
+            }, delay);
+            
+            delay += step.delay + 800; // Add delay between messages
+        });
+    }
+    
+    function botMessage(text, showTyping = true) {
+        if (showTyping) {
+            showTypingIndicator();
+        }
+        
         const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'message bot';
-        messageDiv.innerHTML = `
-            <div class="message-content">
-                <div class="bot-avatar">
-                    <i class="fas fa-robot"></i>
+        
+        setTimeout(() => {
+            if (showTyping) {
+                removeTypingIndicator();
+            }
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message bot';
+            messageDiv.innerHTML = `
+                <div class="message-content">
+                    <div class="bot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-text">
+                        <div class="message-sender">VynSec AI</div>
+                        ${text}
+                    </div>
                 </div>
-                <div class="message-text">
-                    <div class="message-sender">VynSec AI</div>
-                    ${text}
-                </div>
-            </div>
-            <div class="message-time">${time}</div>
-        `;
-        chatBox.appendChild(messageDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
+                <div class="message-time">${time}</div>
+            `;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }, showTyping ? 1000 : 0);
     }
     
     function userMessage(text) {
@@ -106,56 +164,112 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function sendUserMessage() {
+        if (session.isProcessing) return;
+        
         const text = userInput.value.trim();
         if (!text) return;
         
+        session.isProcessing = true;
         userMessage(text);
         userInput.value = '';
+        quickReplies.innerHTML = '';
         
-        // Simple bot response logic
-        setTimeout(() => {
-            if (session.step === 0) {
-                botMessage("Great! Let's start with your security assessment.");
-                session.step++;
-                setTimeout(() => {
-                    botMessage("What type of system do you need to secure?");
-                    showQuickReplies(['SaaS Application', 'eCommerce Platform', 'Corporate Website', 'Mobile App']);
-                }, 800);
-            } else if (session.step === 1) {
-                botMessage("Do users create accounts or log into your system?");
-                session.step++;
-                showQuickReplies(['Yes', 'No', 'Not Applicable']);
-            }
-            // Add more steps as needed
-        }, 1000);
+        // Handle user input based on current step
+        handleUserInput(text);
     }
     
     function handleUserReply(reply) {
+        if (session.isProcessing) return;
+        
+        session.isProcessing = true;
         userMessage(reply);
         quickReplies.innerHTML = '';
         
         // Handle different replies
-        if (reply.includes('Yes, start assessment')) {
-            session.step = 1;
-            setTimeout(() => {
-                botMessage("Great! Let's begin.");
+        handleUserInput(reply);
+    }
+    
+    function handleUserInput(input) {
+        if (session.step === 0) {
+            if (input.includes('Yes, start assessment') || input.toLowerCase().includes('yes')) {
+                session.step = 1;
                 setTimeout(() => {
-                    botMessage("What type of system do you need to secure?");
-                    showQuickReplies(['SaaS Application', 'eCommerce Platform', 'Corporate Website', 'Mobile App']);
+                    botMessage("Great! Let's begin the security assessment.");
+                    setTimeout(() => {
+                        botMessage("What type of system do you need to secure?");
+                        showQuickReplies(['SaaS Application', 'eCommerce Platform', 'Corporate Website', 'Mobile App', 'Other']);
+                        session.isProcessing = false;
+                    }, 800);
                 }, 800);
-            }, 800);
-        } else if (reply.includes('Learn about VynSec')) {
-            botMessage("VynSec provides AI-driven cybersecurity solutions including:");
-            setTimeout(() => {
-                botMessage("• Threat Detection & Response<br>• Vulnerability Management<br>• Compliance Automation<br>• Security Awareness Training");
+            } else if (input.includes('Learn about VynSec')) {
+                botMessage("VynSec provides AI-driven cybersecurity solutions including:");
                 setTimeout(() => {
-                    botMessage("Want to see how we can protect your business?");
-                    showQuickReplies(['Yes, Show Solutions', 'Start Assessment', 'Talk to Human']);
-                }, 1000);
+                    botMessage("• Threat Detection & Response<br>• Vulnerability Management<br>• Compliance Automation<br>• Security Awareness Training");
+                    setTimeout(() => {
+                        botMessage("Want to see how we can protect your business?");
+                        showQuickReplies(['Yes, Show Solutions', 'Start Assessment', 'Talk to Human']);
+                        session.isProcessing = false;
+                    }, 1000);
+                }, 800);
+            } else if (input.includes('Maybe later')) {
+                botMessage("No problem! I'll be here when you're ready.");
+                setTimeout(() => {
+                    showQuickReplies(['Start Assessment Now', 'Contact Sales']);
+                    session.isProcessing = false;
+                }, 800);
+            }
+        } else if (session.step === 1) {
+            // User selected system type
+            userMessage(input);
+            setTimeout(() => {
+                botMessage("Do users create accounts or log into your system?");
+                showQuickReplies(['Yes', 'No', 'Not Applicable']);
+                session.step = 2;
+                session.isProcessing = false;
             }, 800);
-        } else if (reply.includes('Maybe later')) {
-            botMessage("No problem! I'll be here when you're ready.");
-            showQuickReplies(['Start Assessment Now', 'Contact Sales']);
+        } else if (session.step === 2) {
+            userMessage(input);
+            setTimeout(() => {
+                botMessage("Do you process online payments or handle sensitive financial data?");
+                showQuickReplies(['Yes, we process payments', 'We handle financial data', 'No financial data']);
+                session.step = 3;
+                session.isProcessing = false;
+            }, 800);
+        } else if (session.step === 3) {
+            userMessage(input);
+            setTimeout(() => {
+                botMessage("Do you need to comply with regulations like ISO 27001, SOC2, GDPR, or HIPAA?");
+                showQuickReplies(['Yes, we need compliance', 'Not sure', 'No compliance needed']);
+                session.step = 4;
+                session.isProcessing = false;
+            }, 800);
+        } else if (session.step === 4) {
+            userMessage(input);
+            setTimeout(() => {
+                // Show results
+                const riskLevel = session.riskScore > 7 ? "High" : session.riskScore > 4 ? "Medium" : "Low";
+                botMessage(`🔐 <strong>Security Assessment Complete</strong><br><br>
+                    Your risk level: <strong>${riskLevel}</strong><br><br>
+                    Enter your work email to receive a detailed security report:`);
+                session.step = 5;
+                session.isProcessing = false;
+            }, 800);
+        } else if (session.step === 5) {
+            // Email collection
+            userMessage(input);
+            if (validateEmail(input)) {
+                setTimeout(() => {
+                    botMessage("Thank you! Your security report will be sent to your email.");
+                    setTimeout(() => {
+                        botMessage("Would you like to schedule a free consultation with our security experts?");
+                        showQuickReplies(['Yes, schedule call', 'No, thanks', 'Send report first']);
+                        session.isProcessing = false;
+                    }, 800);
+                }, 800);
+            } else {
+                botMessage("Please enter a valid email address:");
+                session.isProcessing = false;
+            }
         }
     }
     
@@ -180,6 +294,16 @@ document.addEventListener('DOMContentLoaded', function() {
         typingDiv.id = 'typingIndicator';
         chatBox.appendChild(typingDiv);
         chatBox.scrollTop = chatBox.scrollHeight;
+    }
+    
+    function removeTypingIndicator() {
+        const typing = document.getElementById('typingIndicator');
+        if (typing) typing.remove();
+    }
+    
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
     }
     
     console.log('VynSec Bot loaded successfully!');
