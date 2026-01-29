@@ -16,13 +16,16 @@
   <meta name="description" content="VynSec IT Services - AI-Driven Cybersecurity Solutions">
   <title>VynSec IT Services | AI-Driven Cybersecurity</title>
 
+  <!-- Main Website CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ✅ VynSec Bot Styles -->
+  <!-- ✅ Advanced VynSec Bot Styles -->
   <link rel="stylesheet" href="/vynsec-bot/vynsec-bot.css">
 </head>
 
@@ -87,38 +90,92 @@
   </div>
 </footer>
 
-<!-- ================= BOT WIDGET START ================= -->
+<!-- ================= ADVANCED BOT WIDGET START ================= -->
 
-<!-- Floating Button -->
-<div id="vynsec-chat-toggle">🛡️</div>
-
-<!-- Chat Widget -->
+<!-- Advanced Chat Widget -->
 <div id="vynsec-chat-widget" class="hidden">
   <div class="chat-header">
-    <h3>VynSec Cyber Assistant</h3>
-    <span id="close-chat">✖</span>
-  </div>
-
-  <div id="chatBox" class="chat-box">
-    <div class="message bot">
-      👋 Hi! I'm your AI Cybersecurity Assistant.<br>
-      I can help assess your website or company security.
+    <div class="chat-header-left">
+      <div class="chat-avatar">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <div class="chat-info">
+        <h4>VynSec Cyber Assistant</h4>
+        <span class="status online">Online</span>
+      </div>
+    </div>
+    <div class="chat-actions">
+      <button class="chat-action-btn minimize-btn" title="Minimize">
+        <i class="fas fa-minus"></i>
+      </button>
+      <button class="chat-action-btn close-btn" title="Close">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
   </div>
 
-  <div id="quickReplies" class="quick-replies"></div>
+  <div id="chatBox" class="chat-box">
+    <!-- Initial greeting appears automatically -->
+    <div class="message bot welcome-message">
+      <div class="message-content">
+        <div class="bot-avatar">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="message-text">
+          <div class="message-sender">VynSec AI</div>
+          <p>👋 Hello! I'm your AI Cybersecurity Assistant from <strong>VynSec</strong>.</p>
+          <p>I can assess your security posture in under 60 seconds and provide personalized recommendations.</p>
+          <p>Would you like to begin a security assessment?</p>
+        </div>
+      </div>
+      <div class="message-time">Just now</div>
+    </div>
+  </div>
 
-  <div class="chat-input">
-    <input type="text" id="userInput" placeholder="Type your answer..." />
-    <button onclick="sendMessage()">Send</button>
+  <div id="quickReplies" class="quick-replies">
+    <button class="quick-reply-btn" data-reply="yes">Yes, start assessment</button>
+    <button class="quick-reply-btn" data-reply="learn">Learn about VynSec</button>
+    <button class="quick-reply-btn" data-reply="later">Maybe later</button>
+  </div>
+
+  <div class="chat-input-container">
+    <input 
+      type="text" 
+      id="userInput" 
+      placeholder="Type your message here..." 
+      autocomplete="off"
+    />
+    <div class="input-actions">
+      <button id="sendBtn" class="send-btn" title="Send message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+  
+  <div class="chat-footer">
+    <span class="footer-text">🔒 Conversations are encrypted & secure</span>
   </div>
 </div>
 
-<!-- ================= BOT WIDGET END ================= -->
+<!-- Floating Chat Toggle -->
+<button id="vynsec-chat-toggle" class="chat-toggle">
+  <i class="fas fa-shield-alt"></i>
+  <span class="notification-badge"></span>
+</button>
+
+<!-- ================= ADVANCED BOT WIDGET END ================= -->
 
 <!-- Scripts -->
 <script src="/vynsec-bot/vynsec-bot.js"></script>
 <script src="js/script.js"></script>
+
+<!-- Initialize Bot -->
+<script>
+  // This will ensure the bot starts properly
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('VynSec Bot initialized');
+  });
+</script>
 
 </body>
 </html>
