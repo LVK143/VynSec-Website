@@ -3,40 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VynSec | AI Cybersecurity</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
+    <title>VynSec | AI Cybersecurity Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Bot CSS -->
-    <link rel="stylesheet" href="vynsec-bot/vynsec-bot.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">Vyn<span>Sec</span></a>
-                <div class="nav-links">
-                    <a href="#" class="active">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html" class="btn-contact">Contact Us</a>
-                </div>
-                <button class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+            <a href="#" class="logo">Vyn<span>Sec</span></a>
+            <div class="nav-menu">
+                <a href="#" class="active">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="btn-nav">Contact</a>
+            </div>
+            <button class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -44,21 +31,20 @@
             <div class="hero-content">
                 <h1>Where <span class="highlight">Artificial Intelligence</span> Meets Cyber Resilience</h1>
                 <p>VynSec delivers AI-driven cybersecurity and IT solutions to protect modern digital infrastructure and enable secure innovation.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn-primary">
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary">
                         Request Security Assessment <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="services.html" class="btn-secondary">Explore Our Services</a>
+                    <a href="#services" class="btn-secondary">Explore Services</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features-section">
+    <!-- Features Grid -->
+    <section class="features">
         <div class="container">
             <div class="features-grid">
-                <!-- Left Column -->
                 <div class="feature-card">
                     <div class="feature-header">
                         <div class="feature-icon">
@@ -74,7 +60,6 @@
                     </ul>
                 </div>
 
-                <!-- Right Column -->
                 <div class="feature-card">
                     <div class="feature-header">
                         <div class="feature-icon">
@@ -96,16 +81,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <!-- Brand Column -->
-                <div class="footer-brand">
-                    <h2>VynSec</h2>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>VynSec</h3>
                     <p>AI-Driven Cybersecurity Solutions for Modern Businesses.</p>
                 </div>
-
-                <!-- Services Column -->
-                <div class="footer-column">
-                    <h3>Services</h3>
+                
+                <div class="footer-col">
+                    <h4>Services</h4>
                     <ul>
                         <li><a href="#">AI Threat Detection</a></li>
                         <li><a href="#">Cyberattack Tracing</a></li>
@@ -114,10 +97,9 @@
                         <li><a href="#">Compliance Advisory</a></li>
                     </ul>
                 </div>
-
-                <!-- Company Column -->
-                <div class="footer-column">
-                    <h3>Company</h3>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
                     <ul>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Services</a></li>
@@ -126,10 +108,9 @@
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Column -->
-                <div class="footer-column">
-                    <h3>Contact</h3>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:contact@vynsec.com">contact@vynsec.com</a></li>
                         <li><a href="#">Legal/Privacy</a></li>
@@ -140,22 +121,46 @@
             </div>
             
             <div class="footer-bottom">
-                © 2026 VynSec. All rights reserved.
+                © 2024 VynSec. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Bot Widget -->
-    <div id="vynsec-chat-widget"></div>
-    <button id="vynsec-chat-toggle"></button>
+    <!-- Chat Bot -->
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-shield-alt"></i>
+    </button>
+    
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <div class="chat-title">
+                <div class="chat-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div>
+                    <h4>VynSec Assistant</h4>
+                    <span class="online">Online</span>
+                </div>
+            </div>
+            <button class="close-chat" id="closeChat">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message bot">
+                <p>👋 Hello! I'm your AI Cybersecurity Assistant from <strong>VynSec</strong>.</p>
+                <p>I can assess your security posture in under 60 seconds.</p>
+                <p>Would you like to begin a security assessment?</p>
+            </div>
+        </div>
+        <div class="quick-replies">
+            <button class="quick-btn" data-reply="yes">Yes, start assessment</button>
+            <button class="quick-btn" data-reply="learn">Learn about VynSec</button>
+            <button class="quick-btn" data-reply="later">Maybe later</button>
+        </div>
+    </div>
 
     <!-- Scripts -->
-    <script src="vynsec-bot/vynsec-bot.js"></script>
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
+    <script src="bot.js"></script>
 </body>
 </html>
