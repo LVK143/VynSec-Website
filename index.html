@@ -4,69 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VynSec | AI Cybersecurity</title>
+    
+    <!-- FONTS & ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* CSS STARTS HERE - PUT EVERYTHING IN THIS FILE */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0a0f1c; color: #e2e8f0; }
-        
-        /* HEADER */
-        .header { background: rgba(10, 15, 28, 0.95); padding: 20px 0; position: fixed; width: 100%; top: 0; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 28px; font-weight: 800; color: white; text-decoration: none; }
-        .logo span { color: #00f7ff; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 500; }
-        .nav-links a:hover { color: #00f7ff; }
-        .btn-contact { background: #00f7ff; color: #0a0f1c; padding: 10px 24px; border-radius: 6px; font-weight: 600; }
-        
-        /* HERO */
-        .hero { padding: 180px 0 100px; text-align: center; margin-top: 80px; }
-        .hero h1 { font-size: 56px; font-weight: 800; margin-bottom: 24px; }
-        .highlight { color: #00f7ff; }
-        .hero p { font-size: 20px; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
-        .hero-buttons { display: flex; gap: 20px; justify-content: center; }
-        .btn-primary { background: #00f7ff; color: #0a0f1c; padding: 16px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; }
-        .btn-secondary { border: 2px solid #00f7ff; color: #00f7ff; padding: 16px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; }
-        
-        /* FEATURES */
-        .features { padding: 100px 0; }
-        .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 900px; margin: 0 auto; }
-        .feature-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(0,247,255,0.2); border-radius: 12px; padding: 30px; }
-        .feature-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-        .feature-icon { width: 50px; height: 50px; background: #00f7ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-        .feature-icon i { color: #0a0f1c; font-size: 24px; }
-        .feature-list { list-style: none; padding-left: 65px; }
-        .feature-list li { color: #94a3b8; padding: 10px 0; border-bottom: 1px solid rgba(148,163,184,0.1); }
-        .feature-list li:last-child { border-bottom: none; }
-        
-        /* FOOTER */
-        .footer { background: #05070d; padding: 80px 0 40px; border-top: 1px solid #1e293b; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 60px; margin-bottom: 60px; }
-        .footer-column h3 { color: #00f7ff; font-size: 24px; margin-bottom: 20px; }
-        .footer-column h4 { color: white; font-size: 18px; margin-bottom: 20px; }
-        .footer-column ul { list-style: none; }
-        .footer-column ul li { margin-bottom: 10px; }
-        .footer-column ul li a { color: #94a3b8; text-decoration: none; }
-        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid #1e293b; color: #64748b; }
-        
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero-buttons { flex-direction: column; align-items: center; }
-            .features-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    
+    <!-- YOUR EXTERNAL CSS FILE -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- HEADER -->
     <header class="header">
         <div class="container">
-            <nav class="navbar">
+            <nav class="nav-container">
                 <a href="#" class="logo">Vyn<span>Sec</span></a>
+                
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
                 <div class="nav-links">
                     <a href="#" class="active">Home</a>
                     <a href="#">Services</a>
@@ -90,7 +48,7 @@
     </section>
 
     <!-- FEATURES -->
-    <section class="features">
+    <section class="features-section">
         <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
@@ -107,6 +65,7 @@
                         <li>Secure Infrastructure</li>
                     </ul>
                 </div>
+                
                 <div class="feature-card">
                     <div class="feature-header">
                         <div class="feature-icon">
@@ -129,40 +88,38 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>VynSec</h3>
+                <div class="footer-brand">
+                    <h2>VynSec</h2>
                     <p>AI-Driven Cybersecurity Solutions for Modern Businesses.</p>
                 </div>
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">AI Threat Detection</a></li>
-                        <li><a href="#">Cyberattack Tracing</a></li>
-                        <li><a href="#">Cloud Security</a></li>
-                        <li><a href="#">Data & Incident Response</a></li>
-                        <li><a href="#">Compliance Advisory</a></li>
-                    </ul>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <a href="#">AI Threat Detection</a>
+                    <a href="#">Cyberattack Tracing</a>
+                    <a href="#">Cloud Security</a>
+                    <a href="#">Data & Incident Response</a>
+                    <a href="#">Compliance Advisory</a>
                 </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <a href="#">About Us</a>
+                    <a href="#">Services</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:contact@vynsec.com">contact@vynsec.com</a></li>
-                        <li><a href="#">Legal/Privacy</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">WhatsApp Support</a></li>
-                    </ul>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <a href="mailto:contact@vynsec.com">contact@vynsec.com</a>
+                    <a href="#">Legal/Privacy</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">WhatsApp Support</a>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 © 2024 VynSec. All rights reserved.
             </div>
@@ -175,6 +132,11 @@
     </button>
 
     <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
         // Simple bot toggle
         document.getElementById('chatToggle').addEventListener('click', function() {
             alert("Chat bot would open here. This is a working website now!");
