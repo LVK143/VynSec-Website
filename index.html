@@ -1,181 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VynSec | AI Cybersecurity</title>
-    
-    <!-- FONTS & ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FIXED: CSS path corrected -->
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VynSec | AI-Powered Cybersecurity</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav-container">
-                <a href="#" class="logo">Vyn<span>Sec</span></a>
-                
-                <!-- FIXED: Added id for JS -->
-                <button class="menu-toggle" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <!-- FIXED: Added id for JS -->
-                <div class="nav-links" id="navMenu">
-                    <a href="#" class="active">Home</a>
-                    <a href="#">Services</a>
-                    <a href="#">About</a>
-                    <a href="#" class="btn-contact">Contact Us</a>
-                </div>
-            </nav>
+
+<!-- Animated Background -->
+<canvas id="cyberGrid"></canvas>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container nav-container">
+        <a href="#" class="logo"><i class="fas fa-shield-alt"></i> Vyn<span>Sec</span></a>
+
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="navMenu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Solutions</a>
+            <a href="#">Platform</a>
+            <a href="#">Resources</a>
+            <a href="#" class="btn-contact">Get Assessment</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <h1>Where <span class="highlight">Artificial Intelligence</span> Meets Cyber Resilience</h1>
-            <p>VynSec delivers AI-driven cybersecurity and IT solutions to protect modern digital infrastructure and enable secure innovation.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn-primary">Request Security Assessment</a>
-                <a href="#" class="btn-secondary">Explore Our Services</a>
-            </div>
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>AI-Powered <span class="highlight">Cyber Defense</span> for Modern Enterprises</h1>
+        <p>Autonomous threat detection, behavioral analytics, and real-time incident response built for mission-critical infrastructure.</p>
+
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary">Request Security Audit</a>
+            <a href="#" class="btn-secondary">Explore Platform</a>
         </div>
-    </section>
 
-    <!-- FEATURES -->
-    <section class="features-section">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Real-time detection</h3>
-                    </div>
-                    <ul class="feature-list">
-                        <li>AI Protection</li>
-                        <li>Security</li>
-                        <li>Cloud Security</li>
-                        <li>Secure Infrastructure</li>
-                    </ul>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-header">
-                        <div class="feature-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Anticipate</h3>
-                    </div>
-                    <ul class="feature-list">
-                        <li>Predictive</li>
-                        <li>Emerging Threats</li>
-                        <li>Data Encryption</li>
-                        <li>End-to-End Security</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="trust-badges">
+            <span><i class="fas fa-lock"></i> Enterprise-Grade Protection</span>
+            <span><i class="fas fa-brain"></i> AI Threat Intelligence</span>
+            <span><i class="fas fa-globe"></i> Global Infrastructure</span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2>VynSec</h2>
-                    <p>AI-Driven Cybersecurity Solutions for Modern Businesses.</p>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <a href="#">AI Threat Detection</a>
-                    <a href="#">Cyberattack Tracing</a>
-                    <a href="#">Cloud Security</a>
-                    <a href="#">Data & Incident Response</a>
-                    <a href="#">Compliance Advisory</a>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <a href="#">About Us</a>
-                    <a href="#">Services</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <a href="mailto:contact@vynsec.com">contact@vynsec.com</a>
-                    <a href="#">Legal/Privacy</a>
-                    <a href="#">Help Center</a>
-                    <a href="#">WhatsApp Support</a>
-                </div>
+<!-- FEATURES -->
+<section class="features-section">
+    <div class="container features-grid">
+        <div class="feature-card">
+            <div class="feature-header">
+                <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                <h3>Behavioral AI Detection</h3>
             </div>
-            
-            <div class="footer-bottom">
-                © <span id="currentYear">2024</span> VynSec. All rights reserved.
-            </div>
+            <ul class="feature-list">
+                <li>Anomaly-based threat detection</li>
+                <li>Zero-day attack prevention</li>
+                <li>Predictive risk scoring</li>
+                <li>Continuous learning engine</li>
+            </ul>
         </div>
-    </footer>
 
-    <!-- SIMPLE BOT -->
-    <button id="chatToggle" style="position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#00f7ff;border:none;border-radius:50%;color:#0a0f1c;font-size:24px;cursor:pointer;">
-        <i class="fas fa-comment"></i>
-    </button>
+        <div class="feature-card">
+            <div class="feature-header">
+                <div class="feature-icon"><i class="fas fa-network-wired"></i></div>
+                <h3>Cloud & Network Defense</h3>
+            </div>
+            <ul class="feature-list">
+                <li>Multi-cloud security</li>
+                <li>Endpoint & server monitoring</li>
+                <li>Encrypted traffic analysis</li>
+                <li>Secure infrastructure controls</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-    <!-- FIXED: Link to your JavaScript file -->
-    <script src="js/vynsec-bot.js"></script>
-    
-    <!-- FIXED: Simplified inline JavaScript that works -->
-    <script>
-        // Mobile menu toggle - WORKING VERSION
-        document.getElementById('mobileMenuBtn')?.addEventListener('click', function() {
-            const navMenu = document.getElementById('navMenu');
-            const icon = this.querySelector('i');
-            
-            navMenu.classList.toggle('active');
-            
-            // Toggle between bars and X icon
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                const navMenu = document.getElementById('navMenu');
-                const menuBtn = document.getElementById('mobileMenuBtn');
-                const icon = menuBtn.querySelector('i');
-                
-                navMenu.classList.remove('active');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-        
-        // Chat toggle - WORKING
-        document.getElementById('chatToggle').addEventListener('click', function() {
-            alert("Chat bot would open here. This is a working website now!");
-        });
-        
-        // Update copyright year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+<!-- STATS -->
+<section class="stats">
+    <div class="container stats-grid">
+        <div class="stat"><h2>99.9%</h2><p>Threat Detection</p></div>
+        <div class="stat"><h2>24/7</h2><p>Monitoring</p></div>
+        <div class="stat"><h2>< 1min</h2><p>Response Time</p></div>
+        <div class="stat"><h2>500+</h2><p>Enterprises Protected</p></div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+    <div class="container">
+        <h2>Secure Your Infrastructure with AI-Driven Defense</h2>
+        <p>Get a complimentary cybersecurity assessment from VynSec experts.</p>
+        <a href="#" class="btn-primary">Schedule Free Assessment</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div class="footer-brand">
+            <h2>VynSec</h2>
+            <p>AI-powered cybersecurity platform protecting enterprises worldwide.</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Platform</h3>
+            <a href="#">AI Detection</a>
+            <a href="#">Cloud Security</a>
+            <a href="#">Threat Intelligence</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <a href="mailto:contact@vynsec.com">contact@vynsec.com</a>
+            <a href="#">Request Demo</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © <span id="year"></span> VynSec Cybersecurity
+    </div>
+</footer>
+
+<script src="js/grid.js"></script>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+toggle.addEventListener("click", () => menu.classList.toggle("active"));
+</script>
+
 </body>
 </html>
-
