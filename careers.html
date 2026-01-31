@@ -3,133 +3,221 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Cybersecurity Careers at VynSec IT">
-  <title>Cybersecurity Careers | Join VynSec IT</title>
+  <meta name="description" content="AI-driven cybersecurity services from VynSec">
+  <title>Cybersecurity Services | VynSec</title>
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<header class="navbar">
-  <!-- Navigation same as other pages -->
+<!-- ===== HEADER (MATCHES OTHER PAGES) ===== -->
+<header class="header">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">Vyn<span>Sec</span></a>
+
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn-contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
+<!-- ===== PAGE HEADER ===== -->
 <section class="page-header">
   <div class="container">
-    <h1>Join Our Cybersecurity Team</h1>
-    <p>Build cutting-edge security solutions with AI experts</p>
+    <h1>Our Cybersecurity Services</h1>
+    <p>AI-driven protection designed for modern digital businesses</p>
   </div>
 </section>
 
-<section class="careers-intro">
+<!-- ===== SERVICES DETAIL ===== -->
+<section class="services-detail">
   <div class="container">
-    <h2>Why Work at VynSec?</h2>
-    <div class="benefits-grid">
-      <div class="benefit">
-        <i class="fas fa-brain"></i>
-        <h3>Work with AI/ML</h3>
-        <p>Develop next-gen security solutions using artificial intelligence</p>
+
+    <!-- AI SECURITY -->
+    <div class="service-category">
+      <div class="category-header">
+        <i class="fas fa-robot"></i>
+        <h2>AI & Machine Learning Security</h2>
       </div>
-      <div class="benefit">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>Learning Budget</h3>
-        <p>$5,000 annual budget for certifications and training</p>
-      </div>
-      <div class="benefit">
-        <i class="fas fa-home"></i>
-        <h3>Remote First</h3>
-        <p>Work from anywhere with flexible hours</p>
-      </div>
-      <div class="benefit">
-        <i class="fas fa-heart"></i>
-        <h3>Health & Wellness</h3>
-        <p>Comprehensive health insurance and wellness programs</p>
+
+      <div class="service-list">
+        <div class="service-item">
+          <h3>AI-Powered Threat Detection</h3>
+          <p>Real-time behavioral analysis that identifies and stops threats before damage occurs.</p>
+          <ul>
+            <li>Anomaly detection & pattern recognition</li>
+            <li>Automated incident response</li>
+            <li>24/7 continuous monitoring</li>
+            <li>Custom threat intelligence feeds</li>
+          </ul>
+        </div>
+
+        <div class="service-item">
+          <h3>Predictive Risk Assessment</h3>
+          <p>Proactively uncover vulnerabilities using predictive AI models.</p>
+          <ul>
+            <li>Risk scoring & prioritization</li>
+            <li>Attack surface analysis</li>
+            <li>Business impact forecasting</li>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <!-- OFFENSIVE SECURITY -->
+    <div class="service-category">
+      <div class="category-header">
+        <i class="fas fa-shield-alt"></i>
+        <h2>Offensive Security</h2>
+      </div>
+
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Penetration Testing</h3>
+          <p>Simulated real-world attacks to identify exploitable weaknesses.</p>
+          <ul>
+            <li>Web & API security testing</li>
+            <li>Network penetration testing</li>
+            <li>Mobile application security</li>
+            <li>Social engineering simulations</li>
+          </ul>
+        </div>
+
+        <div class="service-item">
+          <h3>Red Team Operations</h3>
+          <p>Advanced adversary simulations to evaluate detection and response capabilities.</p>
+          <ul>
+            <li>Multi-vector attack scenarios</li>
+            <li>Physical security testing</li>
+            <li>Purple team collaboration exercises</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLOUD SECURITY -->
+    <div class="service-category">
+      <div class="category-header">
+        <i class="fas fa-cloud"></i>
+        <h2>Cloud Security</h2>
+      </div>
+
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Cloud Infrastructure Security</h3>
+          <p>Comprehensive protection for AWS, Azure, and GCP environments.</p>
+          <ul>
+            <li>Cloud security posture management</li>
+            <li>IAM auditing & optimization</li>
+            <li>Kubernetes & container security</li>
+            <li>Serverless security reviews</li>
+          </ul>
+        </div>
+
+        <div class="service-item">
+          <h3>Secure Cloud Migration</h3>
+          <p>Move to the cloud with security embedded at every step.</p>
+          <ul>
+            <li>Secure architecture design</li>
+            <li>Data protection strategies</li>
+            <li>Compliance & governance mapping</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANAGED SECURITY -->
+    <div class="service-category">
+      <div class="category-header">
+        <i class="fas fa-desktop"></i>
+        <h2>Managed Security Services</h2>
+      </div>
+
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Security Operations Center (SOC)</h3>
+          <p>Round-the-clock monitoring, detection, and response services.</p>
+          <ul>
+            <li>SIEM monitoring & tuning</li>
+            <li>Threat hunting & investigations</li>
+            <li>Incident response coordination</li>
+            <li>Security automation workflows</li>
+          </ul>
+        </div>
+
+        <div class="service-item">
+          <h3>Vulnerability Management</h3>
+          <p>Continuous scanning, risk analysis, and remediation guidance.</p>
+          <ul>
+            <li>Ongoing vulnerability scanning</li>
+            <li>Patch advisory & tracking</li>
+            <li>Risk-based remediation plans</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPLIANCE -->
+    <div class="service-category">
+      <div class="category-header">
+        <i class="fas fa-file-contract"></i>
+        <h2>Compliance & Governance</h2>
+      </div>
+
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Compliance Advisory</h3>
+          <p>Meet global security standards and regulatory requirements.</p>
+          <ul>
+            <li>ISO 27001 readiness</li>
+            <li>SOC 2 Type I & II preparation</li>
+            <li>GDPR & data privacy compliance</li>
+            <li>PCI DSS & HIPAA guidance</li>
+          </ul>
+        </div>
+
+        <div class="service-item">
+          <h3>Security Program Development</h3>
+          <p>Build a security framework aligned with business growth.</p>
+          <ul>
+            <li>Security policy design</li>
+            <li>Risk management frameworks</li>
+            <li>Security awareness training</li>
+            <li>Third-party risk programs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="open-positions">
+<!-- ===== CTA ===== -->
+<section class="cta-banner">
   <div class="container">
-    <h2>Open Positions</h2>
-    
-    <div class="job-listing">
-      <h3>Senior AI Security Engineer</h3>
-      <div class="job-tags">
-        <span class="tag">Remote</span>
-        <span class="tag">Full-time</span>
-        <span class="tag">$120k-$160k</span>
-      </div>
-      <p>Design and implement AI-driven threat detection systems using machine learning models.</p>
-      <a href="#" class="btn-secondary">Apply Now</a>
-    </div>
-    
-    <div class="job-listing">
-      <h3>Penetration Tester</h3>
-      <div class="job-tags">
-        <span class="tag">Remote</span>
-        <span class="tag">Contract</span>
-        <span class="tag">$80-$120/hr</span>
-      </div>
-      <p>Conduct security assessments, vulnerability scanning, and ethical hacking for clients.</p>
-      <a href="#" class="btn-secondary">Apply Now</a>
-    </div>
-    
-    <div class="job-listing">
-      <h3>Cloud Security Architect</h3>
-      <div class="job-tags">
-        <span class="tag">Hybrid</span>
-        <span class="tag">Full-time</span>
-        <span class="tag">$130k-$180k</span>
-      </div>
-      <p>Design secure cloud infrastructure for AWS, Azure, and GCP environments.</p>
-      <a href="#" class="btn-secondary">Apply Now</a>
-    </div>
-    
-    <div class="job-listing">
-      <h3>Security Operations Analyst</h3>
-      <div class="job-tags">
-        <span class="tag">Remote</span>
-        <span class="tag">Full-time</span>
-        <span class="tag">$90k-$130k</span>
-      </div>
-      <p>Monitor security alerts, investigate incidents, and manage SIEM tools.</p>
-      <a href="#" class="btn-secondary">Apply Now</a>
-    </div>
+    <h2>Ready to Secure Your Business?</h2>
+    <p>Request a free assessment and discover how VynSec protects modern infrastructure.</p>
+    <a href="contact.html" class="btn-primary">Request Assessment</a>
   </div>
 </section>
 
-<section class="application-process">
-  <div class="container">
-    <h2>Application Process</h2>
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Initial Screening</h3>
-        <p>Resume review and brief phone call</p>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Technical Assessment</h3>
-        <p>Practical cybersecurity challenge</p>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Team Interview</h3>
-        <p>Meet with potential team members</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Offer</h3>
-        <p>Welcome to the team!</p>
-      </div>
-    </div>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer-bottom">
+    <p>© 2026 VynSec. All rights reserved.</p>
   </div>
-</section>
-
-<footer>
-  <!-- Footer -->
 </footer>
 
+<script src="js/script.js"></script>
 </body>
 </html>
