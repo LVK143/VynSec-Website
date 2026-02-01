@@ -1,223 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AI-driven cybersecurity services from VynSec">
-  <title>Cybersecurity Services | VynSec</title>
-
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<!-- ===== HEADER (MATCHES OTHER PAGES) ===== -->
-<header class="header">
-  <div class="container nav-container">
-    <a href="index.html" class="logo">Vyn<span>Sec</span></a>
-
-    <button class="menu-toggle" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn-contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ===== PAGE HEADER ===== -->
-<section class="page-header">
-  <div class="container">
-    <h1>Our Cybersecurity Services</h1>
-    <p>AI-driven protection designed for modern digital businesses</p>
-  </div>
-</section>
-
-<!-- ===== SERVICES DETAIL ===== -->
-<section class="services-detail">
+<section class="services-section">
   <div class="container">
 
-    <!-- AI SECURITY -->
-    <div class="service-category">
-      <div class="category-header">
-        <i class="fas fa-robot"></i>
-        <h2>AI & Machine Learning Security</h2>
-      </div>
-
-      <div class="service-list">
-        <div class="service-item">
-          <h3>AI-Powered Threat Detection</h3>
-          <p>Real-time behavioral analysis that identifies and stops threats before damage occurs.</p>
-          <ul>
-            <li>Anomaly detection & pattern recognition</li>
-            <li>Automated incident response</li>
-            <li>24/7 continuous monitoring</li>
-            <li>Custom threat intelligence feeds</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <h3>Predictive Risk Assessment</h3>
-          <p>Proactively uncover vulnerabilities using predictive AI models.</p>
-          <ul>
-            <li>Risk scoring & prioritization</li>
-            <li>Attack surface analysis</li>
-            <li>Business impact forecasting</li>
-          </ul>
-        </div>
-      </div>
+    <div class="section-intro">
+      <h2>Comprehensive Cybersecurity Solutions</h2>
+      <p>VynSec delivers AI-powered, enterprise-grade security services that protect your digital infrastructure from evolving threats.</p>
     </div>
 
-    <!-- OFFENSIVE SECURITY -->
-    <div class="service-category">
-      <div class="category-header">
-        <i class="fas fa-shield-alt"></i>
-        <h2>Offensive Security</h2>
+    <div class="services-grid">
+
+      <!-- AI SECURITY -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-robot"></i></div>
+        <h3>AI & ML Threat Defense</h3>
+        <p>Autonomous detection systems that learn, adapt, and neutralize advanced cyber threats in real time.</p>
+        <ul>
+          <li>Behavioral anomaly detection</li>
+          <li>Zero-day threat prevention</li>
+          <li>Predictive risk scoring</li>
+        </ul>
+        <a href="contact.html" class="service-btn">Talk to Expert →</a>
       </div>
 
-      <div class="service-list">
-        <div class="service-item">
-          <h3>Penetration Testing</h3>
-          <p>Simulated real-world attacks to identify exploitable weaknesses.</p>
-          <ul>
-            <li>Web & API security testing</li>
-            <li>Network penetration testing</li>
-            <li>Mobile application security</li>
-            <li>Social engineering simulations</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <h3>Red Team Operations</h3>
-          <p>Advanced adversary simulations to evaluate detection and response capabilities.</p>
-          <ul>
-            <li>Multi-vector attack scenarios</li>
-            <li>Physical security testing</li>
-            <li>Purple team collaboration exercises</li>
-          </ul>
-        </div>
+      <!-- OFFENSIVE -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-user-secret"></i></div>
+        <h3>Penetration Testing</h3>
+        <p>Simulated cyberattacks to uncover vulnerabilities before real attackers do.</p>
+        <ul>
+          <li>Web & API testing</li>
+          <li>Network security testing</li>
+          <li>Red team operations</li>
+        </ul>
+        <a href="contact.html" class="service-btn">Request Testing →</a>
       </div>
+
+      <!-- CLOUD -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-cloud"></i></div>
+        <h3>Cloud Security</h3>
+        <p>Secure your AWS, Azure, and GCP environments with proactive monitoring and posture management.</p>
+        <ul>
+          <li>Cloud posture management</li>
+          <li>IAM & access audits</li>
+          <li>Kubernetes security</li>
+        </ul>
+        <a href="contact.html" class="service-btn">Secure My Cloud →</a>
+      </div>
+
+      <!-- SOC -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Managed SOC Services</h3>
+        <p>24/7 monitoring, detection, and incident response from certified security analysts.</p>
+        <ul>
+          <li>SIEM monitoring</li>
+          <li>Threat hunting</li>
+          <li>Incident response</li>
+        </ul>
+        <a href="contact.html" class="service-btn">Get SOC Support →</a>
+      </div>
+
+      <!-- VULN -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-bug"></i></div>
+        <h3>Vulnerability Management</h3>
+        <p>Continuous scanning and remediation planning to reduce your attack surface.</p>
+        <ul>
+          <li>Automated vulnerability scans</li>
+          <li>Risk prioritization</li>
+          <li>Patch advisory</li>
+        </ul>
+        <a href="contact.html" class="service-btn">Scan My Systems →</a>
+      </div>
+
+      <!-- COMPLIANCE -->
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-file-shield"></i></div>
+        <h3>Compliance & Governance</h3>
+        <p>Meet ISO, SOC2, GDPR, and industry regulations with structured security frameworks.</p>
+        <ul>
+          <li>ISO 27001 readiness</li>
+          <li>SOC 2 preparation</li>
+          <li>Data privacy programs</li>
+        </ul>
+        <a href="contact.html" class="service-btn">Start Compliance →</a>
+      </div>
+
     </div>
-
-    <!-- CLOUD SECURITY -->
-    <div class="service-category">
-      <div class="category-header">
-        <i class="fas fa-cloud"></i>
-        <h2>Cloud Security</h2>
-      </div>
-
-      <div class="service-list">
-        <div class="service-item">
-          <h3>Cloud Infrastructure Security</h3>
-          <p>Comprehensive protection for AWS, Azure, and GCP environments.</p>
-          <ul>
-            <li>Cloud security posture management</li>
-            <li>IAM auditing & optimization</li>
-            <li>Kubernetes & container security</li>
-            <li>Serverless security reviews</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <h3>Secure Cloud Migration</h3>
-          <p>Move to the cloud with security embedded at every step.</p>
-          <ul>
-            <li>Secure architecture design</li>
-            <li>Data protection strategies</li>
-            <li>Compliance & governance mapping</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- MANAGED SECURITY -->
-    <div class="service-category">
-      <div class="category-header">
-        <i class="fas fa-desktop"></i>
-        <h2>Managed Security Services</h2>
-      </div>
-
-      <div class="service-list">
-        <div class="service-item">
-          <h3>Security Operations Center (SOC)</h3>
-          <p>Round-the-clock monitoring, detection, and response services.</p>
-          <ul>
-            <li>SIEM monitoring & tuning</li>
-            <li>Threat hunting & investigations</li>
-            <li>Incident response coordination</li>
-            <li>Security automation workflows</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <h3>Vulnerability Management</h3>
-          <p>Continuous scanning, risk analysis, and remediation guidance.</p>
-          <ul>
-            <li>Ongoing vulnerability scanning</li>
-            <li>Patch advisory & tracking</li>
-            <li>Risk-based remediation plans</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- COMPLIANCE -->
-    <div class="service-category">
-      <div class="category-header">
-        <i class="fas fa-file-contract"></i>
-        <h2>Compliance & Governance</h2>
-      </div>
-
-      <div class="service-list">
-        <div class="service-item">
-          <h3>Compliance Advisory</h3>
-          <p>Meet global security standards and regulatory requirements.</p>
-          <ul>
-            <li>ISO 27001 readiness</li>
-            <li>SOC 2 Type I & II preparation</li>
-            <li>GDPR & data privacy compliance</li>
-            <li>PCI DSS & HIPAA guidance</li>
-          </ul>
-        </div>
-
-        <div class="service-item">
-          <h3>Security Program Development</h3>
-          <p>Build a security framework aligned with business growth.</p>
-          <ul>
-            <li>Security policy design</li>
-            <li>Risk management frameworks</li>
-            <li>Security awareness training</li>
-            <li>Third-party risk programs</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
-
-<!-- ===== CTA ===== -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>Ready to Secure Your Business?</h2>
-    <p>Request a free assessment and discover how VynSec protects modern infrastructure.</p>
-    <a href="contact.html" class="btn-primary">Request Assessment</a>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container footer-bottom">
-    <p>© 2026 VynSec. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
-</body>
-</html>
